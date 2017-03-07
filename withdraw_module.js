@@ -1,10 +1,18 @@
+var notes_2000 = 0;
+var notes_500  = 0;
+var notes_100  = 0;
+var maxLimit = 0;
+
+function initATM(n_2000,n_500,n_100,max){
+  notes_2000 = n_2000;
+  notes_500 = n_500;
+  notes_100 = n_100;
+  maxLimit = max;
+}
+
 function withdraw(){
   var amountWithdraw = parseInt(document.getElementById("withdrawamount").value);
-  var notes_2000 = 100;
-  var notes_500  = 100;
-  var notes_100  = 100;
-  var maxLimit = 10000;
-  var temp_2000 = 0;
+    var temp_2000 = 0;
   var temp_500 = 0;
   var temp_100 = 0;
   var tempAmount = amountWithdraw;
@@ -38,7 +46,10 @@ function withdraw(){
       var despense_100 = parseInt(tempAmount/100);
 
       if(notes_100 >= despense_100){
-        var logEntry = "<tr><td>" + amountWithdraw + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + (notes_2000*2000 + notes_500*500 + notes_100*100) +"</td</tr>";
+        notes_100 = notes_100 - despense_100;
+
+        var logEntry = "<tr class='withdraw'><td>" + amountWithdraw + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + (notes_2000*2000 + notes_500*500 + notes_100*100) +"</td</tr>";
+
         alert("Success!!!!!!" + despense_2000 + " : " + despense_500 +" : "+ despense_100);
         updateLog(logEntry);
       }else{

@@ -10,10 +10,10 @@
     <div id="viewPort">
       <!-- stats -->
       <div id="stats">
-            <div>
-              <table style="width:100%" id="someTable">
-                 <caption>STATS</caption>
-                <tr>
+        <div>
+            <table style="width:100%;"id="someTable">
+               <caption>STATS</caption>
+                <tr style="color:White; background-color:#212F3D">
                   <th >Amount</th>
                   <th >2000</th>
                   <th >500</th>
@@ -22,19 +22,40 @@
                 </tr>
               </table>
             </div>
-            <div></div>
-      </div>
-
-
+            <div>
+              <form>
+                  <table>
+                      <tr>
+                          <th colspan="2">Fill ATM</th>
+                      </tr>
+                      <tr>
+                          <td>2000:</td>
+                          <td><input type="text" id="twoThousand"></td>
+                      </tr>
+                      <tr>
+                          <td>500:</td>
+                          <td><input type="text" id="fiveHundred"></td>
+                      </tr>
+                      <tr>
+                          <td>100:</td>
+                          <td><input type="text" id="oneHundred"></td>
+                      </tr>
+                      <tr><td />
+                          <td><input type="submit" value="Deposit" onclick="alert('Deposit Method Here')"></td>
+                      </tr>
+                  </table>
+              </form>
+          </div>
+         </div>
 
         <!--customer view-->
         <div id="customer_view">
             <div>
             <header style="text-align: center"><h1>Customer View</h1></header>
-            <div>
-                <span>Enter Amount to Wihdraw</span>
-                <input type="text" id="withdrawamount" >
-                <input type="button" id="withdraw" value="Withdraw" onclick = withdraw()>
+            <div class = "customer_view" style="margin:50px">
+                <div>Enter Amount to Withdraw</div></br>
+                <div><input type="text" id="withdrawamount" ></div></br>
+                <div><input type="button" id="withdraw" value="Withdraw" onclick = withdraw()></div>
             </div>
             </div>
         </div>
