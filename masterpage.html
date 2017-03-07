@@ -2,6 +2,7 @@
 <html>
   <head><title>ATM</title>
   <link rel="stylesheet" type="text/css" href="main.css" />
+      <script type="text/javascript" src="moneySubmit.js"></script>
   </head>
 
 
@@ -10,10 +11,10 @@
     <div id="viewPort">
       <!-- stats -->
       <div id="stats">
-        <div>
-            <table style="width:100%;"id="someTable">
-               <caption>STATS</caption>
-                <tr style="color:White; background-color:#212F3D">
+        <div id="log">
+              <table style="width:100%" id="someTable">
+                 <caption>STATS</caption>
+                <tr style="background-color:#283747;color:white;">
                   <th >Amount</th>
                   <th >2000</th>
                   <th >500</th>
@@ -23,6 +24,7 @@
               </table>
             </div>
             <div>
+          <div id="deposit">
               <form>
                   <table>
                       <tr>
@@ -40,14 +42,18 @@
                           <td>100:</td>
                           <td><input type="text" id="oneHundred"></td>
                       </tr>
-                      <tr><td />
-                          <td><input type="submit" value="Deposit" onclick="alert('Deposit Method Here')"></td>
+                      <tr>
+                          <td>Max Amount</td>
+                          <td><input type="text" id="maxAmount"></td>
+                      </tr>
+                      <tr>
+                          <td colspan="2"><input type="button" value="Deposit" onclick= getValue()></td>
                       </tr>
                   </table>
               </form>
           </div>
          </div>
-
+      </div>
         <!--customer view-->
         <div id="customer_view">
             <div>
@@ -58,8 +64,8 @@
                 <div><input type="button" id="withdraw" value="Withdraw" onclick = withdraw()></div>
             </div>
             </div>
+            <div id="error" class = "error" style="margin:20px"></div>
         </div>
-
 
 
     </div>

@@ -9,6 +9,17 @@
     background-color: lightgray;
     width:50%;
 }
+#log{
+    position: static;
+    max-height: 100px;
+}
+#deposit{
+    position: static;
+    padding-top: 50%;
+    padding-bottom: 20%;
+    padding-left:30%;
+}
+
 #customer_view{
     background-color: #5bacdf;
     width:50%;
@@ -18,13 +29,12 @@
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius:20px;
     text-align:center;
 }
 th, td {
     padding: 5px;
-    text-align: left;
 }
 .divcenter{
   display:inline-block;
@@ -52,4 +62,25 @@ input[type='button'] {
 .withdraw{
   color:White;
   background-color: RED;
+}
+
+.deposit{
+  color:White;
+  background-color: GREEN;
+}
+
+.error{
+  color:white;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color:RED;
+}
+
+.setGreen{
+  color:white;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color:GREEN;
 }
