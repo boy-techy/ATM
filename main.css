@@ -16,3 +16,11 @@
 #customer_view div{
     margin:0 auto;
 }
+
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
