@@ -10,6 +10,18 @@
     <div id="viewPort">
       <!-- stats -->
       <div id="stats">
+            <div>
+              <table style="width:100%" id="someTable">
+                 <caption>STATS</caption>
+                <tr>
+                  <th >Amount</th>
+                  <th >2000</th>
+                  <th >500</th>
+                  <th >100</th>
+                  <th >Left</th>
+                </tr>
+              </table>
+            </div>
             <div></div>
       </div>
 
@@ -22,7 +34,7 @@
             <div>
                 <span>Enter Amount to Wihdraw</span>
                 <input type="text" id="withdrawamount" >
-                <input type="button" id="withdraw" value="Withdraw" onclick="alert('Wihdraw Function')">
+                <input type="button" id="withdraw" value="Withdraw" onclick = withdraw()>
             </div>
             </div>
         </div>
@@ -31,4 +43,6 @@
 
     </div>
   </body>
+  <script src = "withdraw_module.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </html>
