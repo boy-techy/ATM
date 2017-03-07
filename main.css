@@ -9,6 +9,17 @@
     background-color: lightgray;
     width:50%;
 }
+#log{
+    position: static;
+    max-height: 100px;
+}
+#deposit{
+    position: static;
+    padding-top: 50%;
+    padding-bottom: 20%;
+    padding-left:30%;
+}
+
 #customer_view{
     background-color: #5bacdf;
     width:50%;

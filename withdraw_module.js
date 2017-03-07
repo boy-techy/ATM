@@ -39,7 +39,7 @@ function withdraw(){
 
       if(notes_100 >= despense_100){
         var logEntry = "<tr><td>" + amountWithdraw + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + (notes_2000*2000 + notes_500*500 + notes_100*100) +"</td</tr>";
-        alert("Success!!!!!!" + despense_2000 + " : " + despense_500 +" : "+ despense_100);
+        // alert("Success!!!!!!" + despense_2000 + " : " + despense_500 +" : "+ despense_100);
         updateLog(logEntry);
       }else{
         notes_100 = notes_100 - despense_100;

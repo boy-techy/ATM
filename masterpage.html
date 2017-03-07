@@ -2,6 +2,7 @@
 <html>
   <head><title>ATM</title>
   <link rel="stylesheet" type="text/css" href="main.css" />
+      <script type="text/javascript" src="moneySubmit.js"></script>
   </head>
 
 
@@ -10,7 +11,7 @@
     <div id="viewPort">
       <!-- stats -->
       <div id="stats">
-          <div>
+          <div id="log">
               <table style="width:100%" id="someTable">
                  <caption>STATS</caption>
                 <tr>
@@ -22,7 +23,7 @@
                 </tr>
               </table>
             </div>
-          <div>
+          <div id="deposit">
               <form>
                   <table>
                       <tr>
@@ -40,8 +41,12 @@
                           <td>100:</td>
                           <td><input type="text" id="oneHundred"></td>
                       </tr>
-                      <tr><td />
-                          <td><input type="submit" value="Deposit" onclick="alert('Deposit Method Here')"></td>
+                      <tr>
+                          <td>Max Amount</td>
+                          <td><input type="text" id="maxAmount"></td>
+                      </tr>
+                      <tr>
+                          <td colspan="2"><input type="submit" value="Deposit" onclick="getValue()"></td>
                       </tr>
                   </table>
               </form>

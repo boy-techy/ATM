@@ -7,6 +7,8 @@ function getValue(){
 	var twoThousand = document.getElementById("twoThousand").value;
 	var fiveHundred = document.getElementById("fiveHundred").value;
 	var oneHundred = document.getElementById("oneHundred").value;
+	var maxAmount =  document.getElementById("oneHundred").value;
+
 	if(isNumber(twoThousand)==false)
 	{
 		alert(twoThousand+ "  Invalid Value");
@@ -21,10 +23,14 @@ function getValue(){
 		alert(oneHundred + " Invalid Value");
 
 	}
+	else if(isNumber(maxAmount)==false){
+		alert(maxAmount +" Max Amount")
+	}
 
-	
+
 	//alert(amnt);
-	finalValue(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred))
+	initATM(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred),parseInt(maxAmount));
+	//finalValue(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred))
 	
 }
 
@@ -48,6 +54,7 @@ function moneySubmit(twoThousand,fiveHundred,oneHundred){
 
 //To print data on the html
 function finalAmount(amount){
+	alert(amount);
 	$(".finalAmountDisplay").html(amount);
 
 
