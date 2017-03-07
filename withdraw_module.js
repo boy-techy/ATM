@@ -1,3 +1,4 @@
+
 var notes_2000 = 0;
 var notes_500  = 0;
 var notes_100  = 0;
@@ -11,6 +12,7 @@ function initATM(n_2000,n_500,n_100,max){
   var amountDeposit = notes_2000*2000 + notes_500*500 + notes_100*100;
   var logEntry = "<tr class='deposit'><td>" + amountDeposit + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + amountDeposit +"</td</tr>";
   updateLog(logEntry);
+  printError("");
 
 }
 
