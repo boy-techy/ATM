@@ -1,0 +1,18 @@
+#viewPort{
+    height:720px;
+    margin:0px;
+    background-color: black;
+    display: flex;
+    width:100%;
+}
+#stats{
+    background-color: lightgray;
+    width:50%;
+}
+#customer_view{
+    background-color: #5bacdf;
+    width:50%;
+}
+#customer_view div{
+    margin:0 auto;
+}
