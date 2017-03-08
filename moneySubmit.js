@@ -44,9 +44,10 @@ function getValue(){
 
 	}
 	
-
+	if(valid){
 	obj = startATM(twoThousand,fiveHundred,oneHundred,fifty,maxAmount,valid);
 	ATM= new initATM(obj.two,obj.five,obj.one,obj.fifty,obj.max);
+}
 	
 	
 }
