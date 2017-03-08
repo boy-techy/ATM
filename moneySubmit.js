@@ -14,6 +14,7 @@ function getValue(){
 	var twoThousand = document.getElementById("twoThousand").value;
 	var fiveHundred = document.getElementById("fiveHundred").value;
 	var oneHundred = document.getElementById("oneHundred").value;
+	var fifty = document.getElementById("fifty").value;
 	var maxAmount =  document.getElementById("maxAmount").value;
   	var valid = true;
 	if(isNumber(twoThousand)==false)
@@ -32,6 +33,11 @@ function getValue(){
     valid = false;
 
 	}
+	else if( isNumber(fifty)==false){
+	printError(oneHundred + " Invalid Value");
+    valid = false;
+
+	}
 	else if(isNumber(maxAmount)==false){
 		printError(maxAmount +" Invalid Value")
     valid = false;
@@ -39,8 +45,8 @@ function getValue(){
 	}
 	
 
-	obj = startATM(twoThousand,fiveHundred,oneHundred,maxAmount,valid);
-	ATM= new initATM(obj.two,obj.five,obj.one,obj.max);
+	obj = startATM(twoThousand,fiveHundred,oneHundred,fifty,maxAmount,valid);
+	ATM= new initATM(obj.two,obj.five,obj.one,obj.fifty,obj.max);
 	//console.log(obj);
 	
 	//alert(amnt);
@@ -62,27 +68,5 @@ function withdraw(){
 
 
 
-function moneySubmit(twoThousand,fiveHundred,oneHundred){
-	this.twoThousand=twoThousand;
-	this.fiveHundred=fiveHundred;
-	this.oneHundred=oneHundred;
-
-	this.currentAmount = 0;
-
-	var currentAmnt = function(){
-		this.currentAmount = (twoThousand*2000)+(fiveHundred*500)+(oneHundred*100)
-		return currentAmount;
-	}
-	this.currentAmount= currentAmnt();
-
-
-}
-
-//To print data on the html
-function finalAmount(amount){
-	$(".finalAmountDisplay").html(amount);
-
-
-}
 
 
