@@ -61,15 +61,26 @@
       </div>
         <!--customer view-->
         <div id="customer_view">
+          
             <div>
             <header style="text-align: center">
-              <h1  style="border-radius:0px 30px 30px 0px;border:solid 5px">Customer View</h1></header>
+                 
+              <h1  style="border-radius:0px 30px 30px 0px;border:solid 5px">Customer View</h1>
+             
+             <div class="amount"> Current Amount:</div><div id="amount" class="amount" style="margin:20px">
+              
+              </div>
+                 </header>
             <div class = "customer_view" style="margin:150px 50px">
+               
                 <div>Enter Amount to Withdraw</div></br>
                 <div><input type="text" id="withdrawamount" ></div></br>
                 <div><input type="button" id="withdraw" value="Withdraw" onclick = withdraw()></div>
             </div>
+             
+            
             </div>
+           
             <div id="error" class = "error" style="margin:20px"></div>
         </div>
 

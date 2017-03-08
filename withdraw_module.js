@@ -13,7 +13,8 @@ function initATM(n_2000,n_500,n_100,n_50,max){
   maxLimit = max;
   var amountDeposit = notes_2000*2000 + notes_500*500 + notes_100*100 + notes_50*50;
   var logEntry = "<tr class='deposit'><td>" + amountDeposit + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + notes_50 + "</td><td>" + amountDeposit +"</td</tr>";
-  updateLog(logEntry);
+var amt= (amountDeposit) ;
+  updateLog(logEntry,amt);
   printError("");
 
 }
@@ -75,7 +76,9 @@ function withdraw(){
           notes_500 = temp_notes_500;
           notes_2000 = temp_notes_2000;
           var logEntry = "<tr class='withdraw'><td>" + amountWithdraw + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + notes_50 + "</td><td>" + (notes_2000*2000 + notes_500*500 + notes_100*100 + notes_50*50) +"</td</tr>";
-          updateLog(logEntry);
+          var amt= (notes_2000*2000 + notes_500*500 + notes_100*100 + notes_50*50) ;
+          updateLog(logEntry,amt);
+           
           printError("Collect Your Amount!!!!!!!!!!");
           $("error").addClass("setGreen");
         }else{
@@ -88,6 +91,7 @@ function withdraw(){
   }
 }
 
-function updateLog(str){
+function updateLog(str,amt){
   $('#someTable').append(str);
+  $('#amount').html(amt);
 }
