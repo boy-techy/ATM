@@ -15,23 +15,15 @@ function startATM(n_2000,n_500,n_100,n_50,maxAmount,check){
       $('#someTable').append(str);
       }
       $("#deposit").hide();
-      a=2;
       updateLog(logEntry);
   
-  //$("#deposit").hide();
-  
-
-  /**/
   return ret;
 
 }
 
 
 function initATM(n_2000,n_500,n_100,n_50,max){
- /* this.notes_2000 = 0;
-  this.notes_500  = 0;
-  this.notes_100  = 0;
-  this.maxLimit = 0;*/
+
   this.notes_2000 = n_2000;
   this.notes_500 = n_500;
   this.notes_100 = n_100;
@@ -118,7 +110,7 @@ initATM.prototype.withdraw = function() {
                   printError("Collect Your Amount!!!!!!!!!!");
                   $("error").addClass("setGreen");
                 }else{
-                  printError("Not Enough Cash!!!!!!!!!!");
+                  printError("Cannot dispense Money");
                 }
               }
             }
