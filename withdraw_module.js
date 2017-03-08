@@ -2,15 +2,17 @@
 var notes_2000 = 0;
 var notes_500  = 0;
 var notes_100  = 0;
+var notes_50  = 0;
 var maxLimit = 0;
 
-function initATM(n_2000,n_500,n_100,max){
+function initATM(n_2000,n_500,n_100,n_50,max){
   notes_2000 = n_2000;
   notes_500 = n_500;
   notes_100 = n_100;
+  notes_50 = n_50;
   maxLimit = max;
-  var amountDeposit = notes_2000*2000 + notes_500*500 + notes_100*100;
-  var logEntry = "<tr class='deposit'><td>" + amountDeposit + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + amountDeposit +"</td</tr>";
+  var amountDeposit = notes_2000*2000 + notes_500*500 + notes_100*100 + notes_50*50;
+  var logEntry = "<tr class='deposit'><td>" + amountDeposit + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + notes_50 + "</td><td>" + amountDeposit +"</td</tr>";
   updateLog(logEntry);
   printError("");
 
@@ -26,6 +28,8 @@ function withdraw(){
     var temp_500 = 0;
     var temp__notes_100 = 0;
     var temp_100 = 0;
+    var temp__notes_50 = 0;
+    var temp_50 = 0;
     var tempAmount = amountWithdraw;
     if(amountWithdraw>maxLimit){
         printError("Sorry, Please enter amount less than " + maxLimit + "!!!!!");
