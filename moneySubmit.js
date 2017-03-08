@@ -8,7 +8,8 @@ function printError(str){
 function getValue(){
 	var twoThousand = document.getElementById("twoThousand").value;
 	var fiveHundred = document.getElementById("fiveHundred").value;
-	var oneHundred = document.getElementById("oneHundred").value;
+  var oneHundred = document.getElementById("oneHundred").value;
+	var fifty = document.getElementById("fifty").value;
 	var maxAmount =  document.getElementById("maxAmount").value;
   var valid = true;
 	if(isNumber(twoThousand)==false)
@@ -28,7 +29,11 @@ function getValue(){
     valid = false;
 
 	}
-	else if(isNumber(maxAmount)==false){
+	else if(isNumber(fifty)==false){
+		printError(fifty +" Invalid Value")
+    valid = false;
+
+	}else if(isNumber(maxAmount)==false){
 		printError(maxAmount +" Invalid Value")
     valid = false;
 
@@ -37,7 +42,7 @@ function getValue(){
 
 	//alert(amnt);
   if(valid){
-    initATM(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred),parseInt(maxAmount));
+    initATM(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred),parseInt(fifty ),parseInt(maxAmount));
     $("#deposit").hide();
   }
 	//finalValue(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred))

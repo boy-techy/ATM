@@ -35,8 +35,8 @@ function withdraw(){
         printError("Sorry, Please enter amount less than " + maxLimit + "!!!!!");
     }else{
 
-      if(tempAmount < 100 || (tempAmount %100 != 0)){
-        printError("Please enter the amount in the multiple of 100");
+      if(tempAmount < 50 || (tempAmount %50 != 0)){
+        printError("Please enter the amount in the multiple of 50");
       }else{
         var despense_2000 = parseInt(tempAmount/2000);
 
@@ -60,10 +60,21 @@ function withdraw(){
         var despense_100 = parseInt(tempAmount/100);
 
         if(notes_100 >= despense_100){
-          notes_100 = notes_100 - despense_100;
+          temp_notes_100 = notes_100 - despense_100;
+          temp_100 = 0;
+        }else{
+          temp_100 = despense_100 - notes_100;
+        }
+        tempAmount = tempAmount%100 + temp_100 * 100;
+
+        var despense_50 = parseInt(tempAmount/50);
+
+        if(notes_50 >= despense_50){
+          notes_50 = notes_50 - despense_50;
+          notes_100 = temp_notes_100;
           notes_500 = temp_notes_500;
           notes_2000 = temp_notes_2000;
-          var logEntry = "<tr class='withdraw'><td>" + amountWithdraw + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + (notes_2000*2000 + notes_500*500 + notes_100*100) +"</td</tr>";
+          var logEntry = "<tr class='withdraw'><td>" + amountWithdraw + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + notes_50 + "</td><td>" + (notes_2000*2000 + notes_500*500 + notes_100*100 + notes_50*50) +"</td</tr>";
           updateLog(logEntry);
           printError("Collect Your Amount!!!!!!!!!!");
           $("error").addClass("setGreen");
