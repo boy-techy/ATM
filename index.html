@@ -1,23 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title> Atm work flow</title>
-	<script type="text/javascript" src="moneySubmit.js"></script>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-<body>
-	<div class="moneySubmitForm">
-	<form>
-		<span>2000 : </span><input type="text" id="twoThousand"><br>
-		<span>500 : </span><input type="text" id="fiveHundred"><br>
-		<span>100 : </span><input type="text" id="oneHundred"><br>
-		<button onclick="getValue()" > Add Money</button>
-		</form>
-	</div>
+  <head><title>ATM</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+      <script type="text/javascript" src="moneySubmit.js"></script>
+      <script type="text/javascript" src="withdrawModule_class.js"></script>
+  </head>
 
-	<div class="finalAmountDisplay">
-	<p></p>	
-	</div>
 
-</body>
+  <body>
+    <!-- View Port -->
+    <div id="viewPort">
+      <!-- stats -->
+      <div id="stats">
+        <div id="log">
+              <table style="width:100%" id="someTable">
+                 <caption><h1  style="border-radius:30px 0px 0px 30px;border:5px solid">STATS</h1></caption>
+                <tr style="background-color:#283747;color:white;">
+                  <th >Amount</th>
+                  <th >2000</th>
+                  <th >500</th>
+                  <th >100</th>
+                  <th >Left</th>
+                </tr>
+              </table>
+            </div>
+            <div>
+          <div id="deposit">
+              <form>
+                  <table>
+                      <tr>
+                          <th colspan="2">Fill ATM</th>
+                      </tr>
+                      <tr>
+                          <td>2000:</td>
+                          <td><input type="text" id="twoThousand"></td>
+                      </tr>
+                      <tr>
+                          <td>500:</td>
+                          <td><input type="text" id="fiveHundred"></td>
+                      </tr>
+                      <tr>
+                          <td>100:</td>
+                          <td><input type="text" id="oneHundred"></td>
+                      </tr>
+                      <tr>
+                          <td>Max Amount</td>
+                          <td><input type="text" id="maxAmount"></td>
+                      </tr>
+                      <tr>
+                          <td colspan="2"><input type="button" value="Deposit" onclick= "getValue()"></td>
+                      </tr>
+                  </table>
+              </form>
+          </div>
+         </div>
+      </div>
+        <!--customer view-->
+        <div id="customer_view">
+            <div>
+            <header style="text-align: center">
+              <h1  style="border-radius:0px 30px 30px 0px;border:solid 5px">Customer View</h1></header>
+            <div class = "customer_view" style="margin:50px">
+                <div>Enter Amount to Withdraw</div></br>
+                <div><input type="text" id="withdrawamount" ></div></br>
+                <div><input type="button" id="withdraw" value="Withdraw" onclick = withdraw()></div>
+            </div>
+            </div>
+            <div id="error" class = "error" style="margin:20px"></div>
+        </div>
+
+
+    </div>
+  </body>
+  <script src = "withdraw_module.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </html>
