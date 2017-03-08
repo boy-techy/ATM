@@ -47,15 +47,11 @@ function getValue(){
 
 	obj = startATM(twoThousand,fiveHundred,oneHundred,fifty,maxAmount,valid);
 	ATM= new initATM(obj.two,obj.five,obj.one,obj.fifty,obj.max);
-	//console.log(obj);
 	
-	//alert(amnt);
-	//finalValue(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred))
 	
 }
 var count =0;
 function withdraw(){
-  	console.log(ATM);
   		if(obj.check && count==0){
 	  		ATM.withdraw();
 	  		count++;
