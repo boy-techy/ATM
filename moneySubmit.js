@@ -1,64 +1,74 @@
 function isNumber(str) {
-        var pattern = /^\d+$/;
-        return pattern.test(str);  // returns a boolean
-    }
-
+    var pattern = /^\d+$/;
+    return pattern.test(str);  // returns a boolean
+}
+function printError(str){
+  $("#error").text(str);
+}
 function getValue(){
 	var twoThousand = document.getElementById("twoThousand").value;
 	var fiveHundred = document.getElementById("fiveHundred").value;
 	var oneHundred = document.getElementById("oneHundred").value;
-	var maxAmount =  document.getElementById("oneHundred").value;
-
+	var maxAmount =  document.getElementById("maxAmount").value;
+  var valid = true;
 	if(isNumber(twoThousand)==false)
 	{
-		alert(twoThousand+ "  Invalid Value");
+		printError(twoThousand+ "  Invalid Value");
+    valid = false;
 	}
 	else if(isNumber(fiveHundred)==false)
 	{
-		alert(fiveHundred+ "  Invalid Value");
+		printError(fiveHundred+ "  Invalid Value");
+    valid = false;
 
 	}
 	else if(isNumber(oneHundred)==false)
 	{
-		alert(oneHundred + " Invalid Value");
+		printError(oneHundred + " Invalid Value");
+    valid = false;
 
 	}
 	else if(isNumber(maxAmount)==false){
-		alert(maxAmount +" Max Amount")
+		printError(maxAmount +" Invalid Value")
+    valid = false;
+
 	}
 
 
 	//alert(amnt);
-	initATM(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred),parseInt(maxAmount));
+  if(valid){
+    initATM(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred),parseInt(maxAmount));
+    $("#deposit").hide();
+  }
 	//finalValue(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred))
-	
-}
-
-
-
-function moneySubmit(twoThousand,fiveHundred,oneHundred){
-	this.twoThousand=twoThousand;
-	this.fiveHundred=fiveHundred;
-	this.oneHundred=oneHundred;
-
-	this.currentAmount = 0;
-
-	var currentAmnt = function(){
-		this.currentAmount = (twoThousand*2000)+(fiveHundred*500)+(oneHundred*100)
-		return currentAmount;
-	}
-	this.currentAmount= currentAmnt();
-
 
 }
 
-//To print data on the html
-function finalAmount(amount){
-	alert(amount);
-	$(".finalAmountDisplay").html(amount);
-
-
-}
+//
+//
+// function moneySubmit(twoThousand,fiveHundred,oneHundred){
+// 	this.twoThousand=twoThousand;
+// 	this.fiveHundred=fiveHundred;
+// 	this.oneHundred=oneHundred;
+//
+// 	this.currentAmount = 0;
+//
+// 	var currentAmnt = function(){
+// 		this.currentAmount = (twoThousand*2000)+(fiveHundred*500)+(oneHundred*100)
+// 		return currentAmount;
+// 	}
+// 	this.currentAmount= currentAmnt();
+//
+//
+// }
+//
+// //To print data on the html
+// function finalAmount(amount){
+// 	alert(amount);
+// 	$(".finalAmountDisplay").html(amount);
+//
+//
+// }
 
 //function for final Value
 function finalValue(twoThousand,fiveHundred,oneHundred){

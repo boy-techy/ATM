@@ -11,10 +11,10 @@
     <div id="viewPort">
       <!-- stats -->
       <div id="stats">
-          <div id="log">
+        <div id="log">
               <table style="width:100%" id="someTable">
-                 <caption>STATS</caption>
-                <tr>
+                 <caption><h1  style="border-radius:30px 0px 0px 30px;border:5px solid">STATS</h1></caption>
+                <tr style="background-color:#283747;color:white;">
                   <th >Amount</th>
                   <th >2000</th>
                   <th >500</th>
@@ -23,6 +23,7 @@
                 </tr>
               </table>
             </div>
+            <div>
           <div id="deposit">
               <form>
                   <table>
@@ -46,27 +47,26 @@
                           <td><input type="text" id="maxAmount"></td>
                       </tr>
                       <tr>
-                          <td colspan="2"><input type="submit" value="Deposit" onclick="getValue()"></td>
+                          <td colspan="2"><input type="button" value="Deposit" onclick= getValue()></td>
                       </tr>
                   </table>
               </form>
           </div>
+         </div>
       </div>
-
-
-
         <!--customer view-->
         <div id="customer_view">
             <div>
-            <header style="text-align: center"><h1>Customer View</h1></header>
-            <div>
-                <span>Enter Amount to Wihdraw</span>
-                <input type="text" id="withdrawamount" >
-                <input type="button" id="withdraw" value="Withdraw" onclick = withdraw()>
+            <header style="text-align: center">
+              <h1  style="border-radius:0px 30px 30px 0px;border:solid 5px">Customer View</h1></header>
+            <div class = "customer_view" style="margin:50px">
+                <div>Enter Amount to Withdraw</div></br>
+                <div><input type="text" id="withdrawamount" ></div></br>
+                <div><input type="button" id="withdraw" value="Withdraw" onclick = withdraw()></div>
             </div>
             </div>
+            <div id="error" class = "error" style="margin:20px"></div>
         </div>
-
 
 
     </div>
