@@ -8,6 +8,8 @@ function printError(str){
   $("#error").text(str);
 }
 
+var obj ={};
+var ATM;
 function getValue(){
 	var twoThousand = document.getElementById("twoThousand").value;
 	var fiveHundred = document.getElementById("fiveHundred").value;
@@ -36,17 +38,26 @@ function getValue(){
 
 	}
 	
-	
-	if(valid){
-	     var startATM = new initATM(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred),parseInt(maxAmount));
-	     $("#deposit").hide();
-	     startATM.deduct();
-    	 
-  	}
+
+	obj = startATM(twoThousand,fiveHundred,oneHundred,maxAmount,valid);
+	ATM= new initATM(obj.two,obj.five,obj.one,obj.max);
+	//console.log(obj);
 	
 	//alert(amnt);
 	//finalValue(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred))
 	
+}
+var count =0;
+function withdraw(){
+  	console.log(ATM);
+  		if(obj.check && count==0){
+	  		ATM.withdraw();
+	  		count++;
+		}
+		else if(obj.check && count!=0){
+			ATM.withdraw();
+		}
+
 }
 
 
