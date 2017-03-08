@@ -46,7 +46,7 @@ function initATM(n_2000,n_500,n_100,n_50,max){
   
 
   //updateLog(logEntry);
-  printError("");
+  printErrorDeposit("");
 
 }
 initATM.prototype.withdraw = function() {
@@ -60,7 +60,7 @@ initATM.prototype.withdraw = function() {
         var temp_2000 = 0;
         var temp_notes_500 = 0;
         var temp_500 = 0;
-        var temp__notes_100 = 0;
+        var temp_notes_100 = 0;
         var temp_100 = 0;
         var temp__notes_50 = 0;
         var temp_50 = 0;

@@ -5,7 +5,11 @@ function isNumber(str) {
 }
 
 function printError(str){
-  $("#error").text(str);
+    $("#error").text(str);
+}
+
+function printErrorDeposit(str){
+    $("#errorDeposit").text(str);
 }
 
 var obj ={};
@@ -19,43 +23,44 @@ function getValue(){
   	var valid = true;
 	if(isNumber(twoThousand)==false)
 	{
-		printError(twoThousand+ "  Invalid Value");
+		printErrorDeposit(twoThousand+ "  Invalid Value");
     	valid = false;
 	}
 	else if(isNumber(fiveHundred)==false)
 	{
-		printError(fiveHundred+ "  Invalid Value");
+		printErrorDeposit(fiveHundred+ "  Invalid Value");
     valid = false;
 
 	}
 	else if( isNumber(oneHundred)==false){
-	printError(oneHundred + " Invalid Value");
+	printErrorDeposit(oneHundred + " Invalid Value");
     valid = false;
 
 	}
 	else if( isNumber(fifty)==false){
-	printError(oneHundred + " Invalid Value");
+	printErrorDeposit(fifty + " Invalid Value");
     valid = false;
 
 	}
 	else if(isNumber(maxAmount)==false){
-		printError(maxAmount +" Invalid Value")
+		printErrorDeposit(maxAmount +" Invalid Value")
     valid = false;
 
-	}
+	}else{
+        obj = startATM(twoThousand,fiveHundred,oneHundred,fifty,maxAmount,valid);
+        ATM= new initATM(obj.two,obj.five,obj.one,obj.fifty,obj.max);
+        //console.log(obj);
+
+    }
 	
 
-	obj = startATM(twoThousand,fiveHundred,oneHundred,fifty,maxAmount,valid);
-	ATM= new initATM(obj.two,obj.five,obj.one,obj.fifty,obj.max);
-	//console.log(obj);
-	
+
 	//alert(amnt);
 	//finalValue(parseInt(twoThousand),parseInt(fiveHundred),parseInt(oneHundred))
 	
 }
 var count =0;
 function withdraw(){
-  	console.log(ATM);
   		if(obj.check && count==0){
 	  		ATM.withdraw();
 	  		count++;
