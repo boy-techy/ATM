@@ -78,13 +78,15 @@ function withdraw(){
           var logEntry = "<tr class='withdraw'><td>" + amountWithdraw + "</td><td>" + notes_2000 + "</td><td>" + notes_500 + "</td><td>" + notes_100 + "</td><td>" + notes_50 + "</td><td>" + (notes_2000*2000 + notes_500*500 + notes_100*100 + notes_50*50) +"</td</tr>";
           var amt= (notes_2000*2000 + notes_500*500 + notes_100*100 + notes_50*50) ;
           updateLog(logEntry,amt);
-           
+
           printError("Collect Your Amount!!!!!!!!!!");
           $("error").addClass("setGreen");
         }else{
           printError("Not Enough Cash!!!!!!!!!!");
         }
       }
+    }else{
+      $("#error").text("Invalid Amount!!!!!!!");
     }
   }else{
     $("#error").text("Invalid Amount!!!!!!!");
