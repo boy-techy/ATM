@@ -2,7 +2,8 @@
 <html>
   <head><title>ATM</title>
   <link rel="stylesheet" type="text/css" href="main.css" />
-      <script type="text/javascript" src="moneySubmit.js"></script>
+      <script type="text/javascript" src="driver.js"></script>
+        <script src = "stats.js"></script>
   </head>
 
 
@@ -13,7 +14,7 @@
       <div id="stats">
         <div id="log">
               <table style="width:100%" id="someTable">
-                 <caption><h1  style="border-radius:30px 0px 0px 30px;border:5px solid">STATS</h1></caption>
+                 <caption><h1 >STATS</h1></caption>
                 <tr style="background-color:#283747;color:white;">
                   <th >Amount</th>
                   <th >2000</th>
@@ -52,10 +53,11 @@
                           <td><input type="text" id="maxAmount"></td>
                       </tr>
                       <tr>
-                          <td colspan="2"><input type="button" value="Deposit" onclick= getValue()></td>
+                          <td colspan="2"><input type="button" value="Deposit" onclick= deposit()></td>
                       </tr>
                   </table>
               </form>
+              <p id="errorStats"></p>
           </div>
          </div>
       </div>
@@ -65,7 +67,7 @@
             <div>
             <header style="text-align: center">
 
-              <h1  style="border-radius:0px 30px 30px 0px;border:solid 5px">Customer View</h1>
+              <h1 >Customer View</h1>
 
              <div class="amount"> Current Amount:</div><div id="amount" class="amount" style="margin:20px">
 
@@ -84,9 +86,7 @@
             <div id="error" class = "error" style="margin-top:20px"></div>
         </div>
 
-
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </body>
-  <script src = "withdraw_module.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </html>
